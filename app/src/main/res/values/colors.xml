@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="dark_plant">#678C30</color>
+    <color name="alt_plant">#59A656</color>
+    <color name="seedling_plant">#80BF55</color>
+    <color name="light_plant">#8DBF41</color>
+    <color name="dirt_plant">#A6A056</color>
+    <color name="dark_dirt_plant">#736F3C</color>
+    <color name="white_plant">#F2F2F2</color>
+    <color name="black_plant">#0D0D0D</color>
+
 </resources>
