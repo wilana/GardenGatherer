@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "420512593954",
+    "project_id": "garden-gatherer",
+    "storage_bucket": "garden-gatherer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420512593954:android:dc77c2bfa434d58bd3b27b",
+        "android_client_info": {
+          "package_name": "com.example.gardengatherer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420512593954-2370qnnnck7pql7jm2u11h3uf67ffg2s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1X0_syTOYdIENLeyRkgOMVjoQRK1gp6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420512593954-2370qnnnck7pql7jm2u11h3uf67ffg2s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
