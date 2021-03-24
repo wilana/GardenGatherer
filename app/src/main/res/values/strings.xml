@@ -2,4 +2,30 @@
     <string name="app_name">Garden Gatherer</string>
     <string name="image_of_seedling">Image of seedling</string>
     <string name="log_in">Log In</string>
+    <string name="browse_gardens">Browse Gardens</string>
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="plantTypes">
+        <item>Annual</item>
+        <item>Perennial</item>
+        <item>Biennial</item>
+    </string-array>
+    <string-array name="lightTypes">
+        <item>Full Sun</item>
+        <item>Part Sun</item>
+        <item>Part Shade</item>
+        <item>Shade</item>
+    </string-array>
 </resources>

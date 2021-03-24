@@ -37,7 +37,7 @@
 
             <EditText
                 android:id="@+id/editTextPlantName"
-                android:layout_width="wrap_content"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Plant Name"
@@ -57,8 +57,8 @@
             <Spinner
                 android:id="@+id/spinnerType"
                 android:layout_width="match_parent"
-                android:autofillHints="Type"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:autofillHints="Type" />
 
         </TableRow>
 
@@ -85,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Continuous slider -->
             <TextView
                 android:id="@+id/textViewBloomTime"
                 android:layout_width="wrap_content"
@@ -92,113 +93,37 @@
                 android:text="Bloom Time:" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <com.google.android.material.slider.RangeSlider
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <CheckBox
-                        android:id="@+id/checkBoxJan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Jan" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxFeb"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Feb" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxJuly"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Mar" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxApr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Apr" />
-
-                </LinearLayout>
+                    android:valueFrom="0.0"
+                    android:valueTo="100.0"
+                    app:values="@array/initial_slider_values" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <CheckBox
-                        android:id="@+id/checkBoxJuly"
+                    <TextView
+                        android:id="@+id/textView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="May" />
+                        android:text="April"
+                        android:textAlignment="viewStart" />
 
-                    <CheckBox
-                        android:id="@+id/checkBoxJune"
+                    <TextView
+                        android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="end"
                         android:layout_weight="1"
-                        android:text="June" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxJuly"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="July" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxApr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Aug" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <CheckBox
-                        android:id="@+id/checkBoxJan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Sept" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxFeb"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Oct" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxJuly"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Nov" />
-
-                    <CheckBox
-                        android:id="@+id/checkBoxApr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Dec" />
-
+                        android:text="October"
+                        android:textAlignment="viewEnd" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -220,9 +145,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="start|top"
-                android:textSize="14sp"
                 android:hint="Ammonium Nitrate in spring."
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
 
         </TableRow>
 
@@ -242,9 +167,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="start|top"
-                android:textSize="14sp"
                 android:hint="Deadhead. Cut 30% back after blooming is done."
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
 
         </TableRow>
     </TableLayout>
@@ -260,4 +185,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout"
         app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
