@@ -57,7 +57,7 @@
                     tools:text="4 x 12 ft" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/textViewLighting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
