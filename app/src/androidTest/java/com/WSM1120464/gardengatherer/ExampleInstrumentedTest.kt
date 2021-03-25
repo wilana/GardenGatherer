@@ -1,4 +1,4 @@
-package com.example.gardengatherer
+package com.WSM1120464.gardengatherer
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

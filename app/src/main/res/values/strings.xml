@@ -3,6 +3,33 @@
     <string name="image_of_seedling">Image of seedling</string>
     <string name="log_in">Log In</string>
     <string name="browse_gardens">Browse Gardens</string>
+    <string name="type">Type:</string>
+    <string name="height">Height (cm):</string>
+    <string name="example_height">10 cm</string>
+    <string name="bloom_time">Bloom Time:</string>
+    <string name="april">April</string>
+    <string name="to">to</string>
+    <string name="october">October</string>
+    <string name="fertilizer">Fertilizer:</string>
+    <string name="fertilizer_example">Ammonium Nitrate in spring.</string>
+    <string name="pruning">Pruning:</string>
+    <string name="pruning_example">Deadhead. Cut 30% back after blooming is done.</string>
+    <string name="notes">Notes:</string>
+    <string name="notes_example">Water when rain is less than 1 inch/week.</string>
+    <string name="save">Save</string>
+    <string name="seedling_content_description">A plant in a pot</string>
+    <string name="name">Name:</string>
+    <string name="plant_name">Plant Name</string>
+    <string name="light_needed">Light Needed:</string>
+    <string name="light">Light:</string>
+    <string name="save_plant_button">Save Plant Button</string>
+    <string name="garden_name">Garden Name:</string>
+    <string name="garden_name_hint">Side Garden</string>
+    <string name="your_name">Your Name:</string>
+    <string name="name_hint">Name</string>
+    <string name="size">Size:</string>
+    <string name="garden_size_hint">1 x 2 m</string>
+    <string name="lighting">Lighting:</string>
     <string-array name="months">
         <item>January</item>
         <item>February</item>

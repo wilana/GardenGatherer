@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "420512593954",
-    "project_id": "garden-gatherer",
-    "storage_bucket": "garden-gatherer.appspot.com"
+    "project_number": "610750258001",
+    "project_id": "gardengatherer",
+    "storage_bucket": "gardengatherer.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:420512593954:android:dc77c2bfa434d58bd3b27b",
+        "mobilesdk_app_id": "1:610750258001:android:ace85a6e6c6b76a9b9d170",
         "android_client_info": {
-          "package_name": "com.example.gardengatherer"
+          "package_name": "com.WSM1120464.gardengatherer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "420512593954-2370qnnnck7pql7jm2u11h3uf67ffg2s.apps.googleusercontent.com",
+          "client_id": "610750258001-ddepit2jgho76fs2pgu35hitsa97kd66.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA1X0_syTOYdIENLeyRkgOMVjoQRK1gp6k"
+          "current_key": "AIzaSyB1R3KtB1Sxd5kXXCqq6BSWnijf_EtjR-A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "420512593954-2370qnnnck7pql7jm2u11h3uf67ffg2s.apps.googleusercontent.com",
+              "client_id": "610750258001-ddepit2jgho76fs2pgu35hitsa97kd66.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

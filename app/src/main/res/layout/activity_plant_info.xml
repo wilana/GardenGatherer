@@ -1,189 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PlantInfoActivity">
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:scrollbarFadeDuration="0">
 
-    <ImageView
-        android:id="@+id/imageViewSeedling"
-        android:layout_width="164dp"
-        android:layout_height="157dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/little_seedling" />
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="349dp"
-        android:layout_height="368dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewSeedling">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".PlantInfoActivity">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imageViewSeedling1"
+            android:layout_width="@dimen/adding_image_width"
+            android:layout_height="@dimen/adding_image_height"
+            android:contentDescription="@string/seedling_content_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/little_seedling" />
 
-            <TextView
-                android:id="@+id/textViewPlantName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name:" />
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="@dimen/table_width"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewSeedling1">
 
-            <EditText
-                android:id="@+id/editTextPlantName"
-                android:layout_width="270dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Plant Name"
-                android:inputType="textPersonName" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textViewType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Type:" />
-
-            <Spinner
-                android:id="@+id/spinnerType"
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="Type" />
+                android:layout_height="match_parent">
 
-        </TableRow>
+                <TextView
+                    android:id="@+id/textViewPlantName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <EditText
+                    android:id="@+id/editTextPlantName"
+                    android:layout_width="@dimen/table_row_input_width"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/plant_name"
+                    android:inputType="textPersonName" />
+            </TableRow>
 
-            <TextView
-                android:id="@+id/textViewHeight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Height:" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
 
-            <EditText
-                android:id="@+id/editTextPlantName2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="10 cm"
-                android:inputType="textPersonName" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/textViewType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <!-- Continuous slider -->
-            <TextView
-                android:id="@+id/textViewBloomTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bloom Time:" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <com.google.android.material.slider.RangeSlider
+                <Spinner
+                    android:id="@+id/spinnerType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:valueFrom="0.0"
-                    android:valueTo="100.0"
-                    app:values="@array/initial_slider_values" />
+                    android:autofillHints="Type" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/textViewPlantLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/light" />
+
+                <Spinner
+                    android:id="@+id/spinnerPlantLight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/height" />
+
+                <EditText
+                    android:id="@+id/editTextPlantHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/example_height"
+                    android:inputType="number|text"
+                    android:textSize="@dimen/edit_text_size" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <!-- Continuous slider -->
+                <TextView
+                    android:id="@+id/textViewBloomTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bloom_time" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.slider.RangeSlider
+                        android:id="@+id/rangeSliderBloomTime"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="April"
-                        android:textAlignment="viewStart" />
+                        android:stepSize="1.0"
+                        android:valueFrom="1.0"
+                        android:valueTo="12.0"
+                        app:values="@array/initial_slider_values" />
 
-                    <TextView
-                        android:id="@+id/textView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_weight="1"
-                        android:text="October"
-                        android:textAlignment="viewEnd" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textViewFirstBloomMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/april"
+                            android:textAlignment="viewStart" />
+
+                        <TextView
+                            android:id="@+id/textViewLastBloomTo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/to"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/textViewLastBloomMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_weight="1"
+                            android:text="@string/october"
+                            android:textAlignment="viewEnd" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
 
-        </TableRow>
+            </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textViewFertilizer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fertilizer:" />
+                <TextView
+                    android:id="@+id/textViewFertilizer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fertilizer" />
 
-            <EditText
-                android:id="@+id/editTextFertilizer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="Ammonium Nitrate in spring."
-                android:inputType="textMultiLine"
-                android:textSize="14sp" />
+                <EditText
+                    android:id="@+id/editTextFertilizer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/fertilizer_example"
+                    android:inputType="textMultiLine"
+                    android:textSize="@dimen/edit_text_size" />
 
-        </TableRow>
+            </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textViewPruning"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pruning:" />
+                <TextView
+                    android:id="@+id/textViewPruning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pruning" />
 
-            <EditText
-                android:id="@+id/editTextPruning"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="Deadhead. Cut 30% back after blooming is done."
-                android:inputType="textMultiLine"
-                android:textSize="14sp" />
+                <EditText
+                    android:id="@+id/editTextPruning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/pruning_example"
+                    android:inputType="textMultiLine"
+                    android:textSize="@dimen/edit_text_size" />
 
-        </TableRow>
-    </TableLayout>
+            </TableRow>
 
-    <Button
-        android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="1.0" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/textViewPlantNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notes" />
+
+                <EditText
+                    android:id="@+id/editTextPlantNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/notes_example"
+                    android:inputType="textMultiLine"
+                    android:textSize="@dimen/edit_text_size" />
+            </TableRow>
+        </TableLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extendedFabSavePlant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity=""
+            android:layout_margin="16dp"
+            android:contentDescription="@string/save_plant_button"
+            android:gravity="center_horizontal"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+
+

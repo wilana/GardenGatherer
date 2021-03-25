@@ -1,4 +1,4 @@
-package com.example.gardengatherer
+package com.WSM1120464.gardengatherer
 
 import org.junit.Test
 

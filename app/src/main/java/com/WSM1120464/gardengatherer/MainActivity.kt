@@ -1,9 +1,8 @@
-package com.example.gardengatherer
+package com.WSM1120464.gardengatherer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import com.example.gardengatherer.databinding.ActivityMainBinding
+import com.WSM1120464.gardengatherer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
