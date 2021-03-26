@@ -10,11 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GardenGatherer">
         <activity android:name="com.WSM1120464.gardengatherer.GardenInfoActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.WSM1120464.gardengatherer.SignInActivity">
 
@@ -22,7 +18,13 @@
         <activity android:name="com.WSM1120464.gardengatherer.PlantInfoActivity">
 
         </activity>
-        <activity android:name="com.WSM1120464.gardengatherer.MainActivity" />
+        <activity android:name="com.WSM1120464.gardengatherer.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

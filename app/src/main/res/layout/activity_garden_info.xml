@@ -13,6 +13,19 @@
         android:layout_height="wrap_content"
         tools:context=".GardenInfoActivity">
 
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extendedFabSaveGarden"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/save_plant_button"
+            android:gravity="center_horizontal"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
+
         <ImageView
             android:id="@+id/imageViewSeedling2"
             android:layout_width="@dimen/adding_image_width"
@@ -104,22 +117,11 @@
                 <Spinner
                     android:id="@+id/spinnerGardenLight"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:entries="@array/lightTypes"/>
             </TableRow>
         </TableLayout>
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/extendedFabSaveGarden"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:contentDescription="@string/save_plant_button"
-            android:gravity="center_horizontal"
-            android:text="@string/save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

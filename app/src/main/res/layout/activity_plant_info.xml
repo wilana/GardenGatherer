@@ -65,7 +65,8 @@
                     android:id="@+id/spinnerType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:autofillHints="Type" />
+                    android:autofillHints="Type"
+                    android:entries="@array/plantTypes"/>
 
             </TableRow>
 
@@ -84,7 +85,8 @@
                 <Spinner
                     android:id="@+id/spinnerPlantLight"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:entries="@array/lightTypes"/>
             </TableRow>
 
             <TableRow

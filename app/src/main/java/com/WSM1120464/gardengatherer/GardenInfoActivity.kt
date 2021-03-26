@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.WSM1120464.gardengatherer.databinding.ActivityGardenInfoBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 
 class GardenInfoActivity : AppCompatActivity() {
@@ -17,19 +18,10 @@ class GardenInfoActivity : AppCompatActivity() {
         binding = ActivityGardenInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Fill light spinner from string array
-        val plantLight = resources.getStringArray(R.array.lightTypes)
-        if (binding.spinnerGardenLight != null)
-        {
-            val adapter = ArrayAdapter(
-                this,
-                android.R.layout.simple_spinner_item,
-                plantLight)
-            binding.spinnerGardenLight.adapter = adapter
-        }
 
 
         binding.extendedFabSaveGarden.setOnClickListener {
+            println("button click registered")
             // only validating garden and person's name
             if (binding.editTextTextGardenName.text.toString().isNotEmpty() && binding.editTextYourName.text.toString().isNotEmpty())
             {
