@@ -9,16 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GardenGatherer">
-        <activity android:name="com.WSM1120464.gardengatherer.GardenInfoActivity">
-
-        </activity>
-        <activity android:name="com.WSM1120464.gardengatherer.SignInActivity">
-
-        </activity>
-        <activity android:name="com.WSM1120464.gardengatherer.PlantInfoActivity">
-
-        </activity>
-        <activity android:name="com.WSM1120464.gardengatherer.MainActivity">
+        <activity android:name=".PlantsActivity"></activity>
+        <activity android:name=".GardenInfoActivity"></activity>
+        <activity android:name=".SignInActivity"></activity>
+        <activity android:name=".PlantInfoActivity"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

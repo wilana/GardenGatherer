@@ -10,8 +10,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/garden_item_select"
-        app:cardCornerRadius="2dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#E7E5EA"
+        app:cardCornerRadius="6dp"
         app:contentPadding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -30,6 +30,7 @@
     <string name="size">Size:</string>
     <string name="garden_size_hint">1 x 2 m</string>
     <string name="lighting">Lighting:</string>
+    <string name="view_all_gardens">View All Gardens</string>
     <string-array name="months">
         <item>January</item>
         <item>February</item>

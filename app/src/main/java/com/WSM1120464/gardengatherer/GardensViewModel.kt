@@ -6,13 +6,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 
-class GardensViewModel (gardenID : String) : ViewModel() {
+/**
+ * Gets list of gardens from db
+ */
+class GardensViewModel : ViewModel() {
     private val gardens = MutableLiveData<List<Garden>>()
 
     init{
-        //query the firestore database
-        val db = FirebaseFirestore.getInstance().collection("comments")
-                .whereEqualTo("gardenID", gardenID)
+        //query the firestore database for the gardens
+        val db = FirebaseFirestore.getInstance().collection("gardens")
 
         db.addSnapshotListener{ documents, exception ->
             if (exception != null){
@@ -25,6 +27,7 @@ class GardensViewModel (gardenID : String) : ViewModel() {
                 {
                     val garden = document.toObject(Garden::class.java)
                     gardenList.add(garden)
+                    garden.gardenName?.let { it1 -> Log.i("ADDED:", it1) }
                 }
                 gardens.value = gardenList
             }

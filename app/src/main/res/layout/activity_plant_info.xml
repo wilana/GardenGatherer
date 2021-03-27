@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbarFadeDuration="0">
 
@@ -13,6 +13,35 @@
         android:layout_height="wrap_content"
         tools:context=".PlantInfoActivity">
 
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_100"
+            android:contentDescription="@string/view_all_gardens"
+            android:text="@string/view_all_gardens"
+            app:icon="@drawable/back_suggest_icon"
+            app:layout_goneMarginTop="@dimen/margin_top_100"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewSeedling1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extendedFabSavePlant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity=""
+            android:layout_margin="16dp"
+            android:contentDescription="@string/save_plant_button"
+            android:gravity="center_horizontal"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tableLayout"/>
+
         <ImageView
             android:id="@+id/imageViewSeedling1"
             android:layout_width="@dimen/adding_image_width"
@@ -20,7 +49,7 @@
             android:contentDescription="@string/seedling_content_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf=""
             app:srcCompat="@drawable/little_seedling" />
 
         <TableLayout
@@ -46,6 +75,7 @@
                     android:layout_width="@dimen/table_row_input_width"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:labelFor="@id/rangeSliderBloomTime"
                     android:hint="@string/plant_name"
                     android:inputType="textPersonName" />
             </TableRow>
@@ -162,6 +192,7 @@
                             android:layout_gravity="end"
                             android:layout_weight="1"
                             android:text="@string/october"
+                            android:labelFor="@id/rangeSliderBloomTime"
                             android:textAlignment="viewEnd" />
                     </LinearLayout>
                 </LinearLayout>
@@ -234,18 +265,7 @@
             </TableRow>
         </TableLayout>
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/extendedFabSavePlant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity=""
-            android:layout_margin="16dp"
-            android:contentDescription="@string/save_plant_button"
-            android:gravity="center_horizontal"
-            android:text="@string/save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

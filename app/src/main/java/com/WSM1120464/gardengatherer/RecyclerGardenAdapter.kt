@@ -13,9 +13,9 @@ class RecyclerGardenAdapter (val context: Context,
 {
     inner class GardenViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val gardenNameTextView = itemView.findViewById<TextView>(R.id.textViewGardenName)
-        //
-        //
-        //
+        val authorNameTextView = itemView.findViewById<TextView>(R.id.textViewAuthorName)
+        val gardenSizeTextView = itemView.findViewById<TextView>(R.id.textViewGardenSize)
+        val lightingTextView = itemView.findViewById<TextView>(R.id.textViewLighting)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GardenViewHolder {
@@ -28,9 +28,9 @@ class RecyclerGardenAdapter (val context: Context,
         val garden = gardens[position]
         with (holder){
             gardenNameTextView.text = garden.gardenName
-            //
-            //
-            //
+            authorNameTextView.text = garden.userName
+            gardenSizeTextView.text = garden.gardenSize
+            lightingTextView.text = garden.lightConditions
         }
     }
 

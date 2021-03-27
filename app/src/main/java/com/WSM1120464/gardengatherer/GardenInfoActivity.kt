@@ -18,7 +18,9 @@ class GardenInfoActivity : AppCompatActivity() {
         binding = ActivityGardenInfoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.extendedFABallGardens.setOnClickListener {
+            finish()
+        }
 
         binding.extendedFabSaveGarden.setOnClickListener {
             println("button click registered")
