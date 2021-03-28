@@ -13,16 +13,13 @@ import com.WSM1120464.gardengatherer.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var linearLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        linearLayoutManager = LinearLayoutManager(this)
-        binding.recyclerViewGardens.layoutManager = (linearLayoutManager)
-
+        // add gardens
         val model : GardenViewModel by viewModels()
         model.getGardens().observe(this, Observer<List<Garden>>{ gardens ->
             var recyclerAdapter = GardenViewAdapter(this, gardens, this)
@@ -30,6 +27,7 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
 
         })
 
+        // FAB changes activity to add a new garden
         binding.addGardenFAB.setOnClickListener {
             val intent = Intent(this, GardenSaveActivity::class.java)
             startActivity(intent)

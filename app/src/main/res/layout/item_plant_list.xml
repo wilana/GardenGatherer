@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="10dp"
     android:textAlignment="textEnd">
 
@@ -88,7 +88,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView3"
+                            android:id="@+id/imageViewFeb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -97,7 +97,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView9"
+                            android:id="@+id/imageViewMar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -106,7 +106,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView12"
+                            android:id="@+id/imageViewApr"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -115,7 +115,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView13"
+                            android:id="@+id/imageViewMay"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -124,7 +124,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView11"
+                            android:id="@+id/imageViewJun"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -133,7 +133,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView10"
+                            android:id="@+id/imageViewJul"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -142,7 +142,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView4"
+                            android:id="@+id/imageViewAug"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -151,7 +151,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView5"
+                            android:id="@+id/imageViewSep"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -160,7 +160,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView8"
+                            android:id="@+id/imageViewOct"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -169,7 +169,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView6"
+                            android:id="@+id/imageViewNov"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -178,7 +178,7 @@
                             app:srcCompat="@drawable/out_of_bloom" />
 
                         <ImageView
-                            android:id="@+id/imageView7"
+                            android:id="@+id/imageViewDec"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
@@ -256,11 +256,11 @@
                             android:textAlignment="center" />
 
                         <TextView
-                            android:id="@+id/textViewSept"
+                            android:id="@+id/textViewSep"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Sept"
+                            android:text="Sep"
                             android:textAlignment="center" />
 
                         <TextView

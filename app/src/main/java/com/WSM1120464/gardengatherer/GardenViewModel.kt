@@ -34,10 +34,10 @@ class GardenViewModel : ViewModel() {
                 return@addSnapshotListener
             }
 
-            val gardenList = ArrayList<Garden>()
+
 
             documents?.let{
-
+                val gardenList = ArrayList<Garden>()
                 for(document in documents)
                 {
                     val garden = document.toObject(Garden::class.java)
