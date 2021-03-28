@@ -5,17 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.WSM1120464.gardengatherer.databinding.ActivityGardenInfoBinding
+import com.WSM1120464.gardengatherer.databinding.ActivityGardenSaveBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 
-class GardenInfoActivity : AppCompatActivity() {
+/**
+ *
+ */
+class GardenSaveActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityGardenInfoBinding
+    private lateinit var binding : ActivityGardenSaveBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityGardenInfoBinding.inflate(layoutInflater)
+        binding = ActivityGardenSaveBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.extendedFABallGardens.setOnClickListener {

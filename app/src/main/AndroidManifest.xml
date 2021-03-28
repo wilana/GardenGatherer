@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GardenGatherer">
         <activity android:name=".PlantsActivity"></activity>
-        <activity android:name=".GardenInfoActivity"></activity>
+        <activity android:name=".GardenSaveActivity"></activity>
         <activity android:name=".SignInActivity"></activity>
-        <activity android:name=".PlantInfoActivity"></activity>
+        <activity android:name=".PlantSaveActivity">
+
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -7,6 +7,8 @@ import com.WSM1120464.gardengatherer.databinding.ActivityPlantsBinding
 class PlantsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlantsBinding
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlantsBinding.inflate(layoutInflater)

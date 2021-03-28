@@ -7,11 +7,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class GardenViewAdapter ( val content: Context,
-                          val gardens : List<Garden>) : RecyclerView.Adapter<GardenViewAdapter.GardenViewHolder>() {
+/**
+ * Updates main activity with card for each garden
+ */
+class GardenViewAdapter ( val context: Context,
+                          val gardens : List<Garden>,
+                          val itemListener : GardenItemListener) : RecyclerView.Adapter<GardenViewAdapter.GardenViewHolder>() {
 
     // Connect view with view holder
-
     inner class GardenViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val textViewGardenName = itemView.findViewById<TextView>(R.id.textViewGardenName)
         val textViewAuthorName = itemView.findViewById<TextView>(R.id.textViewAuthorName)
@@ -36,5 +39,13 @@ class GardenViewAdapter ( val content: Context,
             textViewGardenSize.text = garden.gardenSize
             textViewLighting.text = garden.lightConditions
         }
+
+        holder.itemView.setOnClickListener {
+            itemListener.gardenSelected(garden)
+        }
+    }
+
+    interface GardenItemListener {
+        fun gardenSelected(garden : Garden)
     }
 }
