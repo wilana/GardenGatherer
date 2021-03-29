@@ -26,7 +26,6 @@ class GardenSaveActivity : AppCompatActivity() {
         }
 
         binding.extendedFabSaveGarden.setOnClickListener {
-            println("button click registered")
             // only validating garden and person's name
             if (binding.editTextTextGardenName.text.toString().isNotEmpty() && binding.editTextYourName.text.toString().isNotEmpty())
             {
@@ -46,8 +45,7 @@ class GardenSaveActivity : AppCompatActivity() {
                     .addOnSuccessListener {
                         Toast.makeText(this, "Garden Added", Toast.LENGTH_LONG).show()
                         // change to activity
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
+                        finish()
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, it.localizedMessage, Toast.LENGTH_LONG).show()

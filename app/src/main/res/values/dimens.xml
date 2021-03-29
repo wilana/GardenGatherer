@@ -3,7 +3,7 @@
     <dimen name="button_margins">10dp</dimen>
     <dimen name="adding_image_width">150dp</dimen>
     <dimen name="adding_image_height">130dp</dimen>
-    <dimen name="margin_top_100">10dp</dimen>
+    <dimen name="margin_top">10dp</dimen>
     <dimen name="edit_text_size">14sp</dimen>
     <dimen name="table_row_input_width">270dp</dimen>
     <dimen name="table_width">350dp</dimen>

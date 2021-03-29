@@ -18,7 +18,7 @@
             android:id="@+id/extendedFabAllPlants"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top_100"
+            android:layout_marginTop="@dimen/margin_top"
             android:contentDescription="@string/view_all_gardens"
             android:text="@string/view_garden"
             app:icon="@drawable/back_suggest_icon"
@@ -27,7 +27,7 @@
             app:layout_constraintHorizontal_bias="0.081"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_goneMarginTop="@dimen/margin_top_100" />
+            app:layout_goneMarginTop="@dimen/margin_top" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/extendedFabSavePlant"
@@ -48,7 +48,7 @@
             android:layout_width="@dimen/adding_image_width"
             android:layout_height="@dimen/adding_image_height"
             android:contentDescription="@string/seedling_content_description"
-            android:layout_marginTop="@dimen/margin_top_100"
+            android:layout_marginTop="@dimen/margin_top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/extendedFabAllPlants"
@@ -137,7 +137,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/example_height"
-                    android:inputType="number|text"
+                    android:inputType="number"
                     android:textSize="@dimen/edit_text_size" />
             </TableRow>
 

@@ -1,5 +1,6 @@
 package com.WSM1120464.gardengatherer
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -35,6 +36,12 @@ class PlantsActivity : AppCompatActivity() {
 
         binding.extendedFabBackToMain.setOnClickListener {
             finish()
+        }
+
+        binding.fabAddPlant.setOnClickListener {
+            val intent = Intent(this, PlantSaveActivity::class.java)
+            intent.putExtra("gardenID", gardenID)
+            startActivity(intent)
         }
     }
 }

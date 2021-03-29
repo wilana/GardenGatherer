@@ -5,7 +5,7 @@
     <string name="browse_gardens">Browse Gardens</string>
     <string name="type">Type:</string>
     <string name="height">Height (cm):</string>
-    <string name="example_height">10 cm</string>
+    <string name="example_height">10</string>
     <string name="bloom_time">Bloom Time:</string>
     <string name="april">April</string>
     <string name="to">to</string>
