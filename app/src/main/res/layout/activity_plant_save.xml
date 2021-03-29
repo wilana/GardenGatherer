@@ -137,7 +137,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/example_height"
-                    android:inputType="number"
+                    android:inputType="text"
                     android:textSize="@dimen/edit_text_size" />
             </TableRow>
 

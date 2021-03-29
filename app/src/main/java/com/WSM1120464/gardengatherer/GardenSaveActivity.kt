@@ -1,12 +1,10 @@
 package com.WSM1120464.gardengatherer
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.WSM1120464.gardengatherer.databinding.ActivityGardenSaveBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.FirebaseFirestore
 
 /**

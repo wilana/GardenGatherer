@@ -5,7 +5,7 @@ class Plant (
     var plantName: String?=null,
     var plantType: String?=null,
     var plantLight: String?=null,
-    var plantHeight: Int?= null,
+    var plantHeight: String?= null,
     var plantBloomStart: Int?=null,
     var plantBloomEnd: Int?=null,
     var plantFertilizer: String?=null,

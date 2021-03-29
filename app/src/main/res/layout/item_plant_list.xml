@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:textAlignment="textEnd">
 
-    <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:textAlignment="textEnd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"
@@ -15,6 +11,7 @@
         app:cardBackgroundColor="#E7E5EA"
         app:cardCornerRadius="6dp"
         app:contentPadding="10dp"
+        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -64,12 +61,6 @@
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -85,7 +76,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewFeb"
@@ -94,7 +86,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewMar"
@@ -103,7 +96,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewApr"
@@ -112,7 +106,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/in_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewMay"
@@ -121,7 +116,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/in_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewJun"
@@ -130,7 +126,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewJul"
@@ -139,7 +136,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewAug"
@@ -148,7 +146,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewSep"
@@ -157,7 +156,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewOct"
@@ -166,7 +166,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewNov"
@@ -175,7 +176,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
 
                         <ImageView
                             android:id="@+id/imageViewDec"
@@ -184,7 +186,8 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_margin="2dp"
                             android:layout_weight="1"
-                            app:srcCompat="@drawable/out_of_bloom" />
+                            app:srcCompat="@drawable/out_of_bloom"
+                            android:contentDescription="@string/out_of_bloom"/>
                     </TableRow>
 
                     <TableRow
@@ -197,7 +200,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Jan"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewFeb"
@@ -205,7 +209,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Feb"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewMar"
@@ -213,7 +218,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Mar"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewApr"
@@ -221,7 +227,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Apr"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewMay"
@@ -229,7 +236,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="May"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewJun"
@@ -237,7 +245,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Jun"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewJul"
@@ -245,7 +254,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Jul"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewAug"
@@ -253,7 +263,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Aug"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewSep"
@@ -261,7 +272,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Sep"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewOct"
@@ -269,7 +281,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Oct"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewNov"
@@ -277,7 +290,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Nov"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
 
                         <TextView
                             android:id="@+id/textViewDec"
@@ -285,15 +299,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Dec"
-                            android:textAlignment="center" />
+                            android:textAlignment="center"
+                            android:textSize="15dp" />
                     </TableRow>
 
                 </TableLayout>
 
 
-            </LinearLayout>
+
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>

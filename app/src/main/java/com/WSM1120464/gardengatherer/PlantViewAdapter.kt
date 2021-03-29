@@ -49,6 +49,20 @@ class PlantViewAdapter (val context: Context,
             plantHeightTextView.text = plant.plantHeight
             plantLightTextView.text = plant.plantLight
 
+            // establish all months as out of bloom
+            imageBloomJan.setImageResource(R.drawable.out_of_bloom)
+            imageBloomFeb.setImageResource(R.drawable.out_of_bloom)
+            imageBloomMar.setImageResource(R.drawable.out_of_bloom)
+            imageBloomApr.setImageResource(R.drawable.out_of_bloom)
+            imageBloomMay.setImageResource(R.drawable.out_of_bloom)
+            imageBloomJun.setImageResource(R.drawable.out_of_bloom)
+            imageBloomJul.setImageResource(R.drawable.out_of_bloom)
+            imageBloomAug.setImageResource(R.drawable.out_of_bloom)
+            imageBloomSep.setImageResource(R.drawable.out_of_bloom)
+            imageBloomOct.setImageResource(R.drawable.out_of_bloom)
+            imageBloomNov.setImageResource(R.drawable.out_of_bloom)
+            imageBloomDec.setImageResource(R.drawable.out_of_bloom)
+            // set months within start - finish as in bloom
             for (i in plant.plantBloomStart!!..plant.plantBloomEnd!!)
             {
                 when (i)

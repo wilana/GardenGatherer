@@ -1,6 +1,5 @@
 package com.WSM1120464.gardengatherer
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -32,9 +31,9 @@ class PlantSaveActivity : AppCompatActivity() {
         })
 
         // update Labels for range slider with month as string
-        binding.rangeSliderBloomTime.setLabelFormatter( LabelFormatter {value ->
+        binding.rangeSliderBloomTime.setLabelFormatter { value ->
             getMonth(value.toInt())
-        })
+        }
 
         binding.extendedFabAllPlants.setOnClickListener {
             finish()
@@ -47,7 +46,7 @@ class PlantSaveActivity : AppCompatActivity() {
                 plant.plantName = binding.editTextPlantName.text.toString()
                 plant.plantType = binding.spinnerType.selectedItem.toString()
                 plant.plantLight = binding.spinnerPlantLight.selectedItem.toString()
-                plant.plantHeight = binding.editTextPlantHeight.text.toString().toInt()
+                plant.plantHeight = binding.editTextPlantHeight.text.toString()
                 plant.plantFertilizer = binding.editTextFertilizer.text.toString()
                 plant.plantPruning = binding.editTextPruning.text.toString()
                 plant.plantNotes = binding.editTextPlantNotes.text.toString()
@@ -58,11 +57,11 @@ class PlantSaveActivity : AppCompatActivity() {
                 plant.plantBloomEnd = values[1].toInt()
 
                 // connect to db
-                val db = FirebaseFirestore.getInstance().collection("gardens")
+                val db = FirebaseFirestore.getInstance().collection("plants")
                 plant.plantID = db.document().id
 
                 // add garden to db
-                db.document(plant.gardenID!!).set(plant)
+                db.document(plant.plantID!!).set(plant)
                     .addOnSuccessListener {
                         Toast.makeText(this, "Plant Added", Toast.LENGTH_LONG).show()
                         // change to activity

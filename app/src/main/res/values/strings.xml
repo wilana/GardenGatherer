@@ -4,7 +4,7 @@
     <string name="log_in">Log In</string>
     <string name="browse_gardens">Browse Gardens</string>
     <string name="type">Type:</string>
-    <string name="height">Height (cm):</string>
+    <string name="height">Height:</string>
     <string name="example_height">10</string>
     <string name="bloom_time">Bloom Time:</string>
     <string name="april">April</string>
@@ -32,6 +32,7 @@
     <string name="lighting">Lighting:</string>
     <string name="view_all_gardens">View All Gardens</string>
     <string name="view_garden">View Garden</string>
+    <string name="out_of_bloom">Out of Bloom</string>
     <string-array name="months">
         <item>January</item>
         <item>February</item>
