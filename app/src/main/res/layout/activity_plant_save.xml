@@ -14,17 +14,15 @@
         tools:context=".PlantSaveActivity">
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-
             android:id="@+id/extendedFabAllPlants"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
             android:contentDescription="@string/view_all_gardens"
             android:text="@string/view_garden"
             app:icon="@drawable/back_suggest_icon"
             app:layout_constraintBottom_toTopOf="@+id/imageViewSeedling1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.081"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_goneMarginTop="@dimen/margin_top" />

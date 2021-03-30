@@ -11,10 +11,10 @@
         android:id="@+id/extendedFabBackToMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
         android:contentDescription="@string/view_all_gardens"
         android:text="@string/view_all_gardens"
-
         app:icon="@drawable/back_suggest_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,20 +25,33 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:text="@string/garden_name"
+        android:layout_marginTop="@dimen/margin_top"
         android:textAllCaps="false"
-        android:textSize="20sp"
+        android:textSize="@dimen/heading_font_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/extendedFabBackToMain"
+        app:layout_constraintBottom_toTopOf="@+id/textViewGardenNotes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/extendedFabBackToMain"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewGardenNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_top"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPlants"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPlantsGardenName"
+        tools:text="@string/garden_notes_example" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPlants"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_top"
-        android:paddingBottom="120dp"
+        android:paddingBottom="150dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -56,15 +69,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/add_icon" />
 
-    <TextView
-        android:id="@+id/textViewGardenNotes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_top"
-        tools:text="@string/garden_notes_example"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPlants"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedFabBackToMain" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

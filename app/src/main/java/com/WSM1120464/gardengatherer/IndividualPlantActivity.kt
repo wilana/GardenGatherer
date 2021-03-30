@@ -2,6 +2,7 @@ package com.WSM1120464.gardengatherer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import com.WSM1120464.gardengatherer.databinding.ActivityIndividualPlantBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,6 +17,10 @@ class IndividualPlantActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val plantID = intent.getStringExtra("plantID")
+
+        binding.textViewPlantFertilizer.movementMethod = ScrollingMovementMethod()
+        binding.textViewPlantPruning.movementMethod = ScrollingMovementMethod()
+        binding.textViewPlantNotes.movementMethod = ScrollingMovementMethod()
 
         binding.extendedFabBackToGarden.setOnClickListener {
             finish()
