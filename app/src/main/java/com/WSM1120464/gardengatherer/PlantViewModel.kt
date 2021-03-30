@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 class PlantViewModel (gardenID : String) : ViewModel() {
     private val plants = MutableLiveData<List<Plant>>()
@@ -13,6 +14,7 @@ class PlantViewModel (gardenID : String) : ViewModel() {
         // get list of plants in the garden from db
         val db = FirebaseFirestore.getInstance().collection("plants")
             .whereEqualTo("gardenID", gardenID)
+            .orderBy("plantName", Query.Direction.ASCENDING)
 
         db.addSnapshotListener { documents, exception ->
             if (exception != null) {

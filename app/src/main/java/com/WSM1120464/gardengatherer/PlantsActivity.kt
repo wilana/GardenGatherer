@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.WSM1120464.gardengatherer.databinding.ActivityPlantsBinding
 
-class PlantsActivity : AppCompatActivity() {
+class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
     private lateinit var binding: ActivityPlantsBinding
 
     private lateinit var viewModel : PlantViewModel
@@ -20,6 +20,7 @@ class PlantsActivity : AppCompatActivity() {
 
         // update textview heading as name of garden selected
         binding.textViewPlantsGardenName.text = intent.getStringExtra("gardenName")
+        val userID = intent.getStringExtra("userID")
         val gardenID = intent.getStringExtra("gardenID")
 
         // fill plants from recycler
@@ -28,14 +29,16 @@ class PlantsActivity : AppCompatActivity() {
 
             // connect view model with activity
             viewModel = ViewModelProvider(this, viewModelFactory).get(PlantViewModel::class.java)
-            viewModel.getPlants().observe(this, Observer { plants ->
-                var recyclerAdapter = PlantViewAdapter(this, plants)
+            viewModel.getPlants().observe(this, Observer<List<Plant>> { plants ->
+                var recyclerAdapter = PlantViewAdapter(this, plants, this)
                 binding.recyclerViewPlants.adapter = recyclerAdapter
             })
         }
 
         binding.extendedFabBackToMain.setOnClickListener {
-            finish()
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("userID", userID)
+            startActivity(intent)
         }
 
         binding.fabAddPlant.setOnClickListener {
@@ -43,5 +46,11 @@ class PlantsActivity : AppCompatActivity() {
             intent.putExtra("gardenID", gardenID)
             startActivity(intent)
         }
+    }
+
+    override fun plantSelected (plant : Plant) {
+        val intent = Intent(this, IndividualPlantActivity::class.java)
+        intent.putExtra("plantID", plant.plantID)
+        startActivity(intent)
     }
 }

@@ -10,36 +10,28 @@ import com.google.firebase.firestore.Query
 /**
  * Gets list of gardens from db
  */
-class GardenViewModel : ViewModel() {
+class GardenViewModel(userID: String) : ViewModel() {
     private val gardens = MutableLiveData<List<Garden>>()
 
     init {
-        loadGardens()
-    }
-
-    fun getGardens() : LiveData<List<Garden>> {
-        return gardens
-    }
-
-    private fun loadGardens() {
         //query the firestore database for the gardens
         val db = FirebaseFirestore.getInstance().collection("gardens")
+            .whereEqualTo("userID", userID)
             .orderBy("gardenName", Query.Direction.ASCENDING)
 
-        db.addSnapshotListener{ documents, exception ->
+        db.addSnapshotListener { documents, exception ->
             Log.i("DB_RESPONSE", "# of elements returned ${documents?.size()}")
 
-            if (exception != null){
+            if (exception != null) {
                 Log.w("DB_RESPONSE", "Listen failed", exception)
                 return@addSnapshotListener
             }
 
 
 
-            documents?.let{
+            documents?.let {
                 val gardenList = ArrayList<Garden>()
-                for(document in documents)
-                {
+                for (document in documents) {
                     val garden = document.toObject(Garden::class.java)
                     gardenList.add(garden)
                     garden.gardenName?.let { it1 -> Log.i("ADDED:", it1) }
@@ -49,4 +41,9 @@ class GardenViewModel : ViewModel() {
         }
     }
 
+    fun getGardens(): LiveData<List<Garden>> {
+        return gardens
+    }
+
 }
+

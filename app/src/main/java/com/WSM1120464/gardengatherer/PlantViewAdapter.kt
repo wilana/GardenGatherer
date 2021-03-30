@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class PlantViewAdapter (val context: Context,
-                        val plants : List<Plant>
-                        ) : RecyclerView.Adapter<PlantViewAdapter.PlantViewHolder>() {
+                        val plants : List<Plant>,
+                        val itemListener : PlantItemListener) : RecyclerView.Adapter<PlantViewAdapter.PlantViewHolder>() {
 
     inner class PlantViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView) {
         val plantNameTextView = itemView.findViewById<TextView>(R.id.textViewPlantName)
@@ -81,6 +81,14 @@ class PlantViewAdapter (val context: Context,
                     12-> imageBloomDec.setImageResource(R.drawable.in_bloom)
                 }
             }
+
+            holder.itemView.setOnClickListener {
+                itemListener.plantSelected(plant)
+            }
         }
+    }
+
+    interface PlantItemListener {
+        fun plantSelected(plant : Plant)
     }
 }

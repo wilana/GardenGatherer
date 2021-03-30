@@ -1,5 +1,6 @@
 package com.WSM1120464.gardengatherer
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -17,7 +18,9 @@ class PlantSaveActivity : AppCompatActivity() {
         binding = ActivityPlantSaveBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val userID = intent.getStringExtra("userID")
         val gardenID = intent.getStringExtra("gardenID")
+
 
         // update labels when range slider is touched
         binding.rangeSliderBloomTime.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener {
@@ -65,7 +68,10 @@ class PlantSaveActivity : AppCompatActivity() {
                     .addOnSuccessListener {
                         Toast.makeText(this, "Plant Added", Toast.LENGTH_LONG).show()
                         // change to activity
-                        finish()
+                        val intent = Intent (this, PlantsActivity::class.java)
+                        intent.putExtra("userID", userID)
+                        intent.putExtra("gardenID", gardenID)
+                        startActivity(intent)
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, it.localizedMessage, Toast.LENGTH_LONG).show()

@@ -31,7 +31,7 @@
             android:id="@+id/extendedFabSaveGarden"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/margin_20"
             android:contentDescription="@string/save_plant_button"
             android:gravity="center_horizontal"
             android:text="@string/save"
@@ -44,7 +44,7 @@
             android:id="@+id/imageViewSeedling2"
             android:layout_width="@dimen/adding_image_width"
             android:layout_height="@dimen/adding_image_height"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="@dimen/margin_top_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/extendedFABallGardens"
@@ -74,27 +74,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/garden_name_hint"
-                    android:inputType="textPersonName" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textViewYourName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/your_name" />
-
-                <EditText
-                    android:id="@+id/editTextYourName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/name_hint"
-                    android:inputType="textPersonName"
-                    android:textSize="@dimen/edit_text_size" />
+                    android:inputType="text" />
             </TableRow>
 
             <TableRow
@@ -113,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/garden_size_hint"
-                    android:inputType="textPersonName"
+                    android:inputType="text"
                     android:textSize="@dimen/edit_text_size" />
             </TableRow>
 
@@ -132,6 +112,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:entries="@array/lightTypes"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textViewGardenNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notes" />
+
+                <EditText
+                    android:id="@+id/editTextGardenNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:textSize="@dimen/edit_text_size"
+                    android:gravity="start|top"
+                    android:hint="@string/garden_notes_example"
+                    android:inputType="textMultiLine" />
             </TableRow>
         </TableLayout>
 

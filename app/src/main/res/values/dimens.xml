@@ -8,4 +8,7 @@
     <dimen name="table_row_input_width">270dp</dimen>
     <dimen name="table_width">350dp</dimen>
     <dimen name="image_buttom_margin">30dp</dimen>
+    <dimen name="heading_font_size">20sp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_top_2">50dp</dimen>
 </resources>

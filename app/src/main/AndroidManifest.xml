@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GardenGatherer">
+        <activity android:name=".IndividualPlantActivity"></activity>
         <activity android:name=".PlantsActivity" />
         <activity android:name=".GardenSaveActivity" />
         <activity android:name=".SignInActivity">

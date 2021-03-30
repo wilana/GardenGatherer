@@ -31,15 +31,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
                     android:textStyle="bold"
                     tools:text="Back Garden" />
 
-                <TextView
-                    android:id="@+id/textViewAuthorName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    tools:text="Wilana Matthews" />
             </LinearLayout>
 
             <LinearLayout

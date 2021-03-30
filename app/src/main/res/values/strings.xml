@@ -33,6 +33,9 @@
     <string name="view_all_gardens">View All Gardens</string>
     <string name="view_garden">View Garden</string>
     <string name="out_of_bloom">Out of Bloom</string>
+    <string name="back_to_garden">Back to Garden</string>
+    <string name="garden_notes_example">Exposed to the elements. Needs extra watering.</string>
+    <string name="unavailable">Unavailable</string>
     <string-array name="months">
         <item>January</item>
         <item>February</item>

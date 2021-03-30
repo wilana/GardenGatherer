@@ -1,6 +1,7 @@
 package com.WSM1120464.gardengatherer
 
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -19,20 +20,25 @@ class GardenSaveActivity : AppCompatActivity() {
         binding = ActivityGardenSaveBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var userID = intent.getStringExtra("userID")
+
+        // Go back to view all gardens
         binding.extendedFABallGardens.setOnClickListener {
             finish()
         }
 
+        // try to add garden to list, then return to all gardens
         binding.extendedFabSaveGarden.setOnClickListener {
-            // only validating garden and person's name
-            if (binding.editTextTextGardenName.text.toString().isNotEmpty() && binding.editTextYourName.text.toString().isNotEmpty())
+            // only validating garden name
+            if (binding.editTextTextGardenName.text.toString().isNotEmpty())
             {
-                // save inputed info
+                // save inputted info
                 val garden = Garden()
                 garden.gardenName = binding.editTextTextGardenName.text.toString()
-                garden.userName = binding.editTextYourName.text.toString()
+                garden.userID = userID
                 garden.gardenSize = binding.editTextGardenSize.text.toString()
                 garden.lightConditions = binding.spinnerGardenLight.selectedItem.toString()
+                garden.gardenNotes = binding.editTextGardenNotes.text.toString()
 
                 // connect to db
                 val db = FirebaseFirestore.getInstance().collection("gardens")
@@ -43,7 +49,9 @@ class GardenSaveActivity : AppCompatActivity() {
                     .addOnSuccessListener {
                         Toast.makeText(this, "Garden Added", Toast.LENGTH_LONG).show()
                         // change to activity
-                        finish()
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("userID", userID)
+                        startActivity(intent)
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, it.localizedMessage, Toast.LENGTH_LONG).show()
