@@ -38,7 +38,7 @@ class IndividualPlantActivity : AppCompatActivity() {
                     binding.textViewPlantName.text = plant.plantName
                     binding.textViewPlantType.text = plant.plantType
                     binding.textViewPlantLight.text = plant.plantLight
-                    binding.textViewPlantLight.text = plant.plantHeight
+                    binding.textViewPlantHeight.text = plant.plantHeight
                     binding.textViewPlantBloomStart.text = getMonth(plant.plantBloomStart!!)
                     binding.textViewPlantBloomEnd.text = getMonth(plant.plantBloomEnd!!)
                     if(!plant.plantFertilizer.isNullOrBlank())

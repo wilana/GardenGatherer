@@ -36,6 +36,7 @@
     <string name="back_to_garden">Back to Garden</string>
     <string name="garden_notes_example">Exposed to the elements. Needs extra watering.</string>
     <string name="unavailable">Unavailable</string>
+    <string name="sort_items">Sort items</string>
     <string-array name="months">
         <item>January</item>
         <item>February</item>

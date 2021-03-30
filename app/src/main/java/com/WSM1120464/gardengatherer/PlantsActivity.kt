@@ -3,6 +3,7 @@ package com.WSM1120464.gardengatherer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.WSM1120464.gardengatherer.databinding.ActivityPlantsBinding
