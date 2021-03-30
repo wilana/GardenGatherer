@@ -7,6 +7,7 @@ import android.text.method.ScrollingMovementMethod
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.WSM1120464.gardengatherer.databinding.ActivityPlantsBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
     private lateinit var binding: ActivityPlantsBinding
@@ -21,8 +22,10 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
 
         // update textview heading as name of garden selected
         binding.textViewPlantsGardenName.text = intent.getStringExtra("gardenName")
+        binding.textViewGardenNotes.text = intent.getStringExtra("gardenNotes")
         val userID = intent.getStringExtra("userID")
         val gardenID = intent.getStringExtra("gardenID")
+
 
         // fill plants from recycler
         gardenID?.let{

@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
         intent.putExtra("userID", garden.userID)
         intent.putExtra("gardenID", garden.gardenID)
         intent.putExtra("gardenName", garden.gardenName)
+        intent.putExtra("gardenNotes", garden.gardenNotes)
         startActivity(intent)
     }
 }

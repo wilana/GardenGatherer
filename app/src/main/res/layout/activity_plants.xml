@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedFabBackToMain" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewGardenNotes" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddPlant"
@@ -55,5 +55,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/add_icon" />
+
+    <TextView
+        android:id="@+id/textViewGardenNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_top"
+        tools:text="@string/garden_notes_example"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPlants"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/extendedFabBackToMain" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
