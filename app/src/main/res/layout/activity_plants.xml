@@ -6,13 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".PlantsActivity">
 
-    <include
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/mainToolBar"
-        layout="@layout/toolbar_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Garden Name"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:elevation="@dimen/toolbar_elevation"
+            app:titleTextColor="#4F514F"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.appbar.AppBarLayout>
 
 <!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
 
@@ -27,18 +39,18 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <TextView
-        android:id="@+id/textViewPlantsGardenName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_top"
-        android:text="@string/garden_name"
-        style="@style/TextAppearance.AppCompat.Headline"
-        app:layout_constraintBottom_toTopOf="@+id/textViewGardenNotes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainToolBar"
-        app:layout_constraintVertical_bias="1.0" />
+<!--    <TextView-->
+<!--        android:id="@+id/textViewPlantsGardenName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/margin_top"-->
+<!--        android:text="@string/garden_name"-->
+<!--        style="@style/TextAppearance.AppCompat.Headline"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/textViewGardenNotes"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/mainToolBar"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
 
     <TextView
         android:id="@+id/textViewGardenNotes"
@@ -48,7 +60,7 @@
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewPlants"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPlantsGardenName"
+        app:layout_constraintTop_toBottomOf="@+id/mainToolBar"
         tools:text="@string/garden_notes_example" />
 
     <androidx.recyclerview.widget.RecyclerView

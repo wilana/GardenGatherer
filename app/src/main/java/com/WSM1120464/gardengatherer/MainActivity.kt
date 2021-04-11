@@ -29,7 +29,8 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
         setContentView(binding.root)
 
         // set up toolbar with no back option
-        setSupportActionBar(binding.mainToolBar.topToolbar)
+        setSupportActionBar(binding.topToolbar)
+
 
         // get user to query for gardens
         val userID = intent.getStringExtra("userID")
@@ -76,10 +77,10 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.action_filter -> {
-                // User chose a filter option
-                return true
-            }
+//            R.id.action_filter -> {
+//                // User chose a filter option
+//                return true
+//            }
             R.id.action_logoff -> {
                 authDb.signOut()
                 finish()

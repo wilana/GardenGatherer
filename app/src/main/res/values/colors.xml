@@ -20,5 +20,6 @@
     <color name="grayTextColor">#FF7C7979</color>
     <color name="mediumGray">#A9A9A9</color>
     <color name="lightGray">#E7E5EA</color>
+    <color name="card_color">#E7E5EA</color>
 
 </resources>

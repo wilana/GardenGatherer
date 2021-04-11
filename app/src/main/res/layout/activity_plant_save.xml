@@ -13,13 +13,25 @@
         android:layout_height="wrap_content"
         tools:context=".PlantSaveActivity">
 
-        <include
-            android:id="@+id/mainToolBar"
-            layout="@layout/toolbar_main"
+        <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/mainToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Add Plant"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:elevation="@dimen/toolbar_elevation"
+            app:titleTextColor="#4F514F"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.appbar.AppBarLayout>
 
 <!--        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
 <!--            android:id="@+id/extendedFabAllPlants"-->

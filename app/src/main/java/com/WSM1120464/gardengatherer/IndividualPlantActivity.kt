@@ -25,7 +25,7 @@ class IndividualPlantActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // setup toolbar
-        setSupportActionBar(binding.mainToolBar.topToolbar)
+        setSupportActionBar(binding.topToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // get the plant to look for
@@ -55,7 +55,7 @@ class IndividualPlantActivity : AppCompatActivity() {
                 val plant = document.toObject(Plant::class.java)
 
                 plant?.let {
-                    binding.textViewPlantName.text = plant.plantName
+                    binding.topToolbar.title = plant.plantName
                     binding.textViewPlantType.text = plant.plantType
                     binding.textViewPlantLight.text = plant.plantLight
                     binding.textViewPlantHeight.text = plant.plantHeight

@@ -25,7 +25,7 @@ class PlantSaveActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // set up toolbar
-        setSupportActionBar(binding.mainToolBar.topToolbar)
+        setSupportActionBar(binding.topToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // get garden to add to

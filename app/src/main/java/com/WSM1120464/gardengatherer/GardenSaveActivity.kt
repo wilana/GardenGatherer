@@ -26,7 +26,7 @@ class GardenSaveActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // set up toolbar
-        setSupportActionBar(binding.mainToolBar.topToolbar)
+        setSupportActionBar(binding.topToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // user info for querying db

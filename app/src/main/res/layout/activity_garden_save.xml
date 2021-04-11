@@ -14,13 +14,25 @@
         android:layout_height="wrap_content"
         tools:context=".GardenSaveActivity">
 
-        <include
+        <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/mainToolBar"
-            layout="@layout/toolbar_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:elevation="@dimen/toolbar_elevation"
+                app:titleTextColor="#4F514F"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Add Garden"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline" />
+        </com.google.android.material.appbar.AppBarLayout>
 
 <!--        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
 <!--            android:id="@+id/extendedFABallGardens"-->

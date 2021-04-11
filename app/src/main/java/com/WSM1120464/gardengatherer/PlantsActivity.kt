@@ -28,11 +28,11 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
         setContentView(binding.root)
 
         // setup toolbar
-        setSupportActionBar(binding.mainToolBar.topToolbar)
+        setSupportActionBar(binding.topToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // update textview heading as name of garden selected
-        binding.textViewPlantsGardenName.text = intent.getStringExtra("gardenName")
+        binding.topToolbar.title = intent.getStringExtra("gardenName")
         binding.textViewGardenNotes.text = intent.getStringExtra("gardenNotes")
 
         // get garden to look for
@@ -85,10 +85,10 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.action_filter -> {
-                // User chose a filter option
-                return true
-            }
+//            R.id.action_filter -> {
+//                // User chose a filter option
+//                return true
+//            }
             R.id.action_logoff -> {
                 authDb.signOut()
                 finish()

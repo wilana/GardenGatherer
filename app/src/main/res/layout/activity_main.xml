@@ -7,13 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include
+<!--    <include-->
+<!--        android:id="@+id/mainToolBar"-->
+<!--        layout="@layout/toolbar_main"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+    <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/mainToolBar"
-        layout="@layout/toolbar_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="@string/browse_gardens"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:elevation="@dimen/toolbar_elevation"
+            app:titleTextColor="#4F514F"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addGardenFAB"
@@ -27,16 +46,16 @@
         app:srcCompat="@drawable/add_icon"
         android:focusable="true" />
 
-    <TextView
-        android:id="@+id/textViewGardensTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/browse_gardens"
-        style="@style/TextAppearance.AppCompat.Headline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mainToolBar"
-         />
+<!--    <TextView-->
+<!--        android:id="@+id/textViewGardensTitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/browse_gardens"-->
+<!--        style="@style/TextAppearance.AppCompat.Headline"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/mainToolBar"-->
+<!--         />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewGardens"
@@ -46,7 +65,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewGardensTitle"
+        app:layout_constraintTop_toBottomOf="@id/mainToolBar"
         />
 
 
