@@ -4,13 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.view.Menu
+import android.view.MenuItem
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.WSM1120464.gardengatherer.databinding.ActivityPlantsBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
     private lateinit var binding: ActivityPlantsBinding
+    private val authDb = FirebaseAuth.getInstance()
 
     private lateinit var viewModel : PlantViewModel
     private lateinit var viewModelFactory: PlantViewModelFactory
@@ -19,6 +23,9 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
         super.onCreate(savedInstanceState)
         binding = ActivityPlantsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.mainToolBar.topToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // update textview heading as name of garden selected
         binding.textViewPlantsGardenName.text = intent.getStringExtra("gardenName")
@@ -39,11 +46,11 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
             })
         }
 
-        binding.extendedFabBackToMain.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("userID", userID)
-            startActivity(intent)
-        }
+//        binding.extendedFabBackToMain.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            intent.putExtra("userID", userID)
+//            startActivity(intent)
+//        }
 
         binding.fabAddPlant.setOnClickListener {
             val intent = Intent(this, PlantSaveActivity::class.java)
@@ -56,5 +63,33 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
         val intent = Intent(this, IndividualPlantActivity::class.java)
         intent.putExtra("plantID", plant.plantID)
         startActivity(intent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("userID", intent.getStringExtra("userID"))
+            startActivity(intent)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_filter -> {
+                // User chose a filter option
+                return true
+            }
+            R.id.action_logoff -> {
+                authDb.signOut()
+                finish()
+                startActivity(Intent(this, SignInActivity::class.java))
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

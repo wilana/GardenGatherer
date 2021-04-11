@@ -3,15 +3,19 @@ package com.WSM1120464.gardengatherer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 
 import com.WSM1120464.gardengatherer.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
     private lateinit var binding: ActivityMainBinding
+    private val authDb = FirebaseAuth.getInstance()
 
     private lateinit var viewModel : GardenViewModel
     private lateinit var viewModelFactory: GardenViewModelFactory
@@ -20,6 +24,9 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.mainToolBar.topToolbar)
+
+
 
         val userID = intent.getStringExtra("userID")
         // fill gardens from user's gardens
@@ -40,6 +47,7 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
             intent.putExtra("userID", userID)
             startActivity(intent)
         }
+
     }
 
     override fun gardenSelected(garden: Garden) {
@@ -49,5 +57,26 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
         intent.putExtra("gardenName", garden.gardenName)
         intent.putExtra("gardenNotes", garden.gardenNotes)
         startActivity(intent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_filter -> {
+                // User chose a filter option
+                return true
+            }
+            R.id.action_logoff -> {
+                authDb.signOut()
+                finish()
+                startActivity(Intent(this, SignInActivity::class.java))
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

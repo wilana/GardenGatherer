@@ -26,8 +26,7 @@
                 android:id="@+id/textViewPlantName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                style="@style/TextAppearance.AppCompat.Headline"
                 tools:text="Iceland Poppy" />
 
             <LinearLayout

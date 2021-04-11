@@ -6,33 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".PlantsActivity">
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-
-        android:id="@+id/extendedFabBackToMain"
-        android:layout_width="wrap_content"
+    <include
+        android:id="@+id/mainToolBar"
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:contentDescription="@string/view_all_gardens"
-        android:text="@string/view_all_gardens"
-        app:icon="@drawable/back_suggest_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
+<!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+
+<!--        android:id="@+id/extendedFabBackToMain"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/fab_margin"-->
+<!--        android:layout_marginStart="@dimen/fab_margin"-->
+<!--        android:contentDescription="@string/view_all_gardens"-->
+<!--        android:text="@string/view_all_gardens"-->
+<!--        app:icon="@drawable/back_suggest_icon"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
         android:id="@+id/textViewPlantsGardenName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/garden_name"
         android:layout_marginTop="@dimen/margin_top"
-        android:textAllCaps="false"
-        android:textSize="@dimen/heading_font_size"
-        android:textStyle="bold"
+        android:text="@string/garden_name"
+        style="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintBottom_toTopOf="@+id/textViewGardenNotes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/extendedFabBackToMain"
+        app:layout_constraintTop_toBottomOf="@id/mainToolBar"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView

@@ -30,10 +30,9 @@
                     android:id="@+id/textViewGardenName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:textStyle="bold"
+                    style="@style/TextAppearance.AppCompat.Headline"
                     tools:text="Back Garden" />
 
             </LinearLayout>

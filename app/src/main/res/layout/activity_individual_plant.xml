@@ -6,17 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".IndividualPlantActivity">
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/extendedFabBackToGarden"
-        android:layout_width="wrap_content"
+<!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+<!--        android:id="@+id/extendedFabBackToGarden"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/fab_margin"-->
+<!--        android:layout_marginStart="@dimen/fab_margin"-->
+<!--        android:contentDescription="@string/view_all_gardens"-->
+<!--        android:text="@string/back_to_garden"-->
+<!--        app:icon="@drawable/back_suggest_icon"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <include
+        android:id="@+id/mainToolBar"
+        layout="@layout/toolbar_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:contentDescription="@string/view_all_gardens"
-        android:text="@string/back_to_garden"
-        app:icon="@drawable/back_suggest_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -28,7 +36,7 @@
         app:contentPadding="@dimen/margin_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extendedFabBackToGarden">
+        app:layout_constraintTop_toBottomOf="@+id/mainToolBar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,12 +47,8 @@
                 android:id="@+id/textViewPlantName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textSize="@dimen/heading_font_size"
-                android:textStyle="bold"
                 android:layout_marginBottom="@dimen/button_margins"
+                style="@style/TextAppearance.AppCompat.Headline"
                 tools:text="Plant Name" />
 
             <ImageView

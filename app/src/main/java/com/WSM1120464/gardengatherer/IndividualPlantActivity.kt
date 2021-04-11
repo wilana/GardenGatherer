@@ -1,20 +1,28 @@
 package com.WSM1120464.gardengatherer
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import com.WSM1120464.gardengatherer.databinding.ActivityIndividualPlantBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
 class IndividualPlantActivity : AppCompatActivity() {
     private lateinit var binding : ActivityIndividualPlantBinding
+    private val authDb = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityIndividualPlantBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.mainToolBar.topToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val plantID = intent.getStringExtra("plantID")
 
@@ -22,9 +30,9 @@ class IndividualPlantActivity : AppCompatActivity() {
         binding.textViewPlantPruning.movementMethod = ScrollingMovementMethod()
         binding.textViewPlantNotes.movementMethod = ScrollingMovementMethod()
 
-        binding.extendedFabBackToGarden.setOnClickListener {
-            finish()
-        }
+//        binding.extendedFabBackToGarden.setOnClickListener {
+//            finish()
+//        }
 
         // get list of plants in the garden from db
         val db = FirebaseFirestore.getInstance().collection("plants")
@@ -74,5 +82,27 @@ class IndividualPlantActivity : AppCompatActivity() {
             12 -> "December"
             else -> "Error"
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.back_menu, menu)
+        return true
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_logoff -> {
+                authDb.signOut()
+                finish()
+                startActivity(Intent(this, SignInActivity::class.java))
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

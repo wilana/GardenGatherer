@@ -13,6 +13,7 @@ class SignInActivity : AppCompatActivity() {
     val RC_SIGN_IN = 1234
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_GardenGatherer)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
