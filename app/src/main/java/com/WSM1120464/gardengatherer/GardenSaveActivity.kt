@@ -12,7 +12,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 /**
- *
+ *  User can input a garden with information
+ *  and save to Firestore
  */
 class GardenSaveActivity : AppCompatActivity() {
 
@@ -24,14 +25,12 @@ class GardenSaveActivity : AppCompatActivity() {
         binding = ActivityGardenSaveBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // set up toolbar
         setSupportActionBar(binding.mainToolBar.topToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
+        // user info for querying db
         var userID = intent.getStringExtra("userID")
-
-
-
 
         // try to add garden to list, then return to all gardens
         binding.extendedFabSaveGarden.setOnClickListener {
@@ -53,8 +52,9 @@ class GardenSaveActivity : AppCompatActivity() {
                 // add garden to db
                 db.document(garden.gardenID!!).set(garden)
                     .addOnSuccessListener {
+                        // tell user it worked
                         Toast.makeText(this, "Garden Added", Toast.LENGTH_LONG).show()
-                        // change to activity
+                        // change back to main activity by reloading gardens
                         val intent = Intent(this, MainActivity::class.java)
                         intent.putExtra("userID", userID)
                         startActivity(intent)
@@ -69,11 +69,14 @@ class GardenSaveActivity : AppCompatActivity() {
         }
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.back_menu, menu)
         return true
     }
 
+    // looked this up from https://freakycoder.com/android-notes-24-how-to-add-back-button-at-toolbar-941e6577418e
+    // Back button in toolbar
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true

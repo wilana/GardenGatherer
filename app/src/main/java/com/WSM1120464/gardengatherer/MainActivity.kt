@@ -13,6 +13,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.WSM1120464.gardengatherer.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ * View all of user's gardens
+ */
 class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
     private lateinit var binding: ActivityMainBinding
     private val authDb = FirebaseAuth.getInstance()
@@ -24,11 +27,13 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // set up toolbar with no back option
         setSupportActionBar(binding.mainToolBar.topToolbar)
 
-
-
+        // get user to query for gardens
         val userID = intent.getStringExtra("userID")
+
         // fill gardens from user's gardens
         userID?.let{
             viewModelFactory = GardenViewModelFactory(userID)
@@ -50,6 +55,11 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
 
     }
 
+    /**
+     * Switch to List of Plants for the selected garden
+     * Send userID and gardenID for querying
+     * Send gardenName and gardenNotes for viewing
+     */
     override fun gardenSelected(garden: Garden) {
         val intent = Intent(this, PlantsActivity::class.java)
         intent.putExtra("userID", garden.userID)

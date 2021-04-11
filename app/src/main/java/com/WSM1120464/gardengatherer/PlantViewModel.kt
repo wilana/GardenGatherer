@@ -7,6 +7,9 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
+/**
+ * Get List of plants in appropriate garden
+ */
 class PlantViewModel (gardenID : String) : ViewModel() {
     private val plants = MutableLiveData<List<Plant>>()
 

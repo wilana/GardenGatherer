@@ -3,21 +3,32 @@ package com.WSM1120464.gardengatherer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import com.WSM1120464.gardengatherer.databinding.ActivityPlantSaveBinding
 import com.google.android.material.slider.LabelFormatter
 import com.google.android.material.slider.RangeSlider
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-
+/**
+ * Add a plant to the garden
+ */
 class PlantSaveActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlantSaveBinding
+    private val authDb = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPlantSaveBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // set up toolbar
+        setSupportActionBar(binding.mainToolBar.topToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // get garden to add to
         val userID = intent.getStringExtra("userID")
         val gardenID = intent.getStringExtra("gardenID")
 
@@ -38,9 +49,10 @@ class PlantSaveActivity : AppCompatActivity() {
             getMonth(value.toInt())
         }
 
-        binding.extendedFabAllPlants.setOnClickListener {
-            finish()
-        }
+        // Back button as FAB
+//        binding.extendedFabAllPlants.setOnClickListener {
+//            finish()
+//        }
 
         binding.extendedFabSavePlant.setOnClickListener {
             // Plant validation only requires name
@@ -111,5 +123,28 @@ class PlantSaveActivity : AppCompatActivity() {
             12 -> "December"
             else -> "Error"
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.back_menu, menu)
+        return true
+    }
+
+    // back button in toolbar
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.action_logoff -> {
+                authDb.signOut()
+                finish()
+                startActivity(Intent(this, SignInActivity::class.java))
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

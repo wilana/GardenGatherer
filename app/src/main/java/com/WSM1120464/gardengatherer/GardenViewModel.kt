@@ -27,8 +27,6 @@ class GardenViewModel(userID: String) : ViewModel() {
                 return@addSnapshotListener
             }
 
-
-
             documents?.let {
                 val gardenList = ArrayList<Garden>()
                 for (document in documents) {

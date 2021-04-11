@@ -8,6 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+/**
+ * Populate card with plant information
+ */
 class PlantViewAdapter (val context: Context,
                         val plants : List<Plant>,
                         val itemListener : PlantItemListener) : RecyclerView.Adapter<PlantViewAdapter.PlantViewHolder>() {
@@ -62,6 +65,7 @@ class PlantViewAdapter (val context: Context,
             imageBloomOct.setImageResource(R.drawable.out_of_bloom)
             imageBloomNov.setImageResource(R.drawable.out_of_bloom)
             imageBloomDec.setImageResource(R.drawable.out_of_bloom)
+
             // set months within start - finish as in bloom
             for (i in plant.plantBloomStart!!..plant.plantBloomEnd!!)
             {

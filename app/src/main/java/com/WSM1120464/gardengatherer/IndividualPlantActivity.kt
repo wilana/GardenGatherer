@@ -12,6 +12,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
+/**
+ * View static plant information
+ */
 class IndividualPlantActivity : AppCompatActivity() {
     private lateinit var binding : ActivityIndividualPlantBinding
     private val authDb = FirebaseAuth.getInstance()
@@ -21,15 +24,19 @@ class IndividualPlantActivity : AppCompatActivity() {
         binding = ActivityIndividualPlantBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // setup toolbar
         setSupportActionBar(binding.mainToolBar.topToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        // get the plant to look for
         val plantID = intent.getStringExtra("plantID")
 
+        // Add scrolling to larger text areas
         binding.textViewPlantFertilizer.movementMethod = ScrollingMovementMethod()
         binding.textViewPlantPruning.movementMethod = ScrollingMovementMethod()
         binding.textViewPlantNotes.movementMethod = ScrollingMovementMethod()
 
+        // Back button as a FAB
 //        binding.extendedFabBackToGarden.setOnClickListener {
 //            finish()
 //        }
@@ -66,6 +73,10 @@ class IndividualPlantActivity : AppCompatActivity() {
             }
         }
     }
+
+    /**
+     * change month from int to string
+     */
     fun getMonth(value : Int): String {
         return when (value) {
             1 -> "January"
@@ -89,6 +100,7 @@ class IndividualPlantActivity : AppCompatActivity() {
         return true
     }
 
+    // set up back button in menu
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true

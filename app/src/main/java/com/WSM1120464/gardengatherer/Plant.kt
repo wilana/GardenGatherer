@@ -6,6 +6,7 @@ class Plant (
     var plantType: String?=null,
     var plantLight: String?=null,
     var plantHeight: String?= null,
+    // Months as Int to allow for easier representation of ranges
     var plantBloomStart: Int?=null,
     var plantBloomEnd: Int?=null,
     var plantFertilizer: String?=null,
