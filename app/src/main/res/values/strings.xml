@@ -38,6 +38,7 @@
     <string name="unavailable">Unavailable</string>
     <string name="sort_items">Sort items</string>
     <string name="more">More</string>
+    <string name="log_out">Log Out</string>
     <string-array name="months">
         <item>January</item>
         <item>February</item>

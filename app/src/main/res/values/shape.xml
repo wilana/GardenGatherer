@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    from https://material.io/blog/android-stable-release-1-2 -->
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent"
+    parent="">
+    <!--
+    Sets size of corners to be 50% of min(width, height) of widget
+    -->
+    <item name="cornerSize">50%</item>
+    </style>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://material.io/components/menus/android#theming-menus -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <solid android:color="@color/primaryDarkColor"/>
+        <corners
+            android:radius="16dp"/>
+        <padding
+            android:bottom="8dp"
+            android:top="8dp"/>
+</shape>
