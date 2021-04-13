@@ -35,20 +35,6 @@
              />
     </com.google.android.material.appbar.AppBarLayout>
 
-<!--        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
-<!--            android:id="@+id/extendedFabAllPlants"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="@dimen/fab_margin"-->
-<!--            android:layout_marginStart="@dimen/fab_margin"-->
-<!--            android:contentDescription="@string/view_all_gardens"-->
-<!--            android:text="@string/view_garden"-->
-<!--            app:icon="@drawable/back_suggest_icon"-->
-<!--            app:layout_constraintBottom_toTopOf="@+id/imageViewSeedling1"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_goneMarginTop="@dimen/margin_top" />-->
-
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/extendedFabSavePlant"
             android:layout_width="wrap_content"
@@ -64,15 +50,15 @@
             app:layout_constraintTop_toBottomOf="@id/tableLayout"/>
 
         <ImageView
-            android:id="@+id/imageViewSeedling1"
+            android:id="@+id/imageViewPlant"
             android:layout_width="@dimen/adding_image_width"
             android:layout_height="@dimen/adding_image_height"
-            android:contentDescription="@string/seedling_content_description"
             android:layout_marginTop="@dimen/margin_top"
+            android:contentDescription="@string/seedling_content_description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mainToolBar"
-            app:srcCompat="@drawable/little_seedling" />
+            app:srcCompat="@drawable/new_seedling" />
 
         <TableLayout
             android:id="@+id/tableLayout"
@@ -80,7 +66,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewSeedling1">
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPlant">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -97,9 +83,10 @@
                     android:layout_width="@dimen/table_row_input_width"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:labelFor="@id/rangeSliderBloomTime"
                     android:hint="@string/plant_name"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:labelFor="@id/rangeSliderBloomTime" />
+
             </TableRow>
 
             <TableRow
@@ -118,7 +105,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="Type"
-                    android:entries="@array/plantTypes"/>
+                    android:entries="@array/plantTypes" />
 
             </TableRow>
 
@@ -138,7 +125,7 @@
                     android:id="@+id/spinnerPlantLight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/lightTypes"/>
+                    android:entries="@array/lightTypes" />
             </TableRow>
 
             <TableRow
@@ -213,8 +200,8 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_weight="1"
-                            android:text="@string/october"
                             android:labelFor="@id/rangeSliderBloomTime"
+                            android:text="@string/october"
                             android:textAlignment="viewEnd" />
                     </LinearLayout>
                 </LinearLayout>

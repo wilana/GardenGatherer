@@ -1,16 +1,28 @@
 package com.WSM1120464.gardengatherer
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
+import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
+import android.provider.MediaStore
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.core.content.FileProvider
 import com.WSM1120464.gardengatherer.databinding.ActivityPlantSaveBinding
-import com.google.android.material.slider.LabelFormatter
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.slider.RangeSlider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.io.File
 
 /**
  * Add a plant to the garden
@@ -18,6 +30,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 class PlantSaveActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPlantSaveBinding
     private val authDb = FirebaseAuth.getInstance()
+
+    // Picture handling
+    private val REQUEST_CODE = 1000
+    private lateinit var filePhoto : File
+    private val FILE_NAME = "photo"
+    private val IMAGE_CHOOSE = 2000
+    private var imageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +48,8 @@ class PlantSaveActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // get garden to add to
-        val userID = intent.getStringExtra("userID")
         val gardenID = intent.getStringExtra("gardenID")
-
+        val gardenName = intent.getStringExtra("gardenName")
 
         // update labels when range slider is touched
         binding.rangeSliderBloomTime.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener {
@@ -45,14 +63,9 @@ class PlantSaveActivity : AppCompatActivity() {
         })
 
         // update Labels for range slider with month as string
-        binding.rangeSliderBloomTime.setLabelFormatter { value ->
+        binding.rangeSliderBloomTime.setLabelFormatter { value: Float ->
             getMonth(value.toInt())
         }
-
-        // Back button as FAB
-//        binding.extendedFabAllPlants.setOnClickListener {
-//            finish()
-//        }
 
         binding.extendedFabSavePlant.setOnClickListener {
             // Plant validation only requires name
@@ -81,8 +94,8 @@ class PlantSaveActivity : AppCompatActivity() {
                         Toast.makeText(this, "Plant Added", Toast.LENGTH_LONG).show()
                         // change to activity
                         val intent = Intent (this, PlantsActivity::class.java)
-                        intent.putExtra("userID", userID)
                         intent.putExtra("gardenID", gardenID)
+                        intent.putExtra("gardenName", gardenName)
                         startActivity(intent)
                     }
                     .addOnFailureListener {
@@ -147,4 +160,54 @@ class PlantSaveActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+
+    // Photo things from https://medium.com/developer-student-clubs/android-kotlin-camera-using-gallery-ff8591c26c3e
+
+    //This method will return the file object for the picture (the actual .jpg)
+    private fun getPhotoFile(fileName: String) : File{
+        val directoryStorage = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        return File.createTempFile(fileName, ".jpg", directoryStorage)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        when (requestCode) {
+            REQUEST_CODE -> if(resultCode == Activity.RESULT_OK) {
+                val takenPhoto = BitmapFactory.decodeFile(filePhoto.absolutePath)
+                binding.imageViewPlant.setImageBitmap(takenPhoto)
+                val builder = Uri.Builder()
+                imageUri = builder.appendPath(filePhoto.absolutePath).build()
+            }
+            IMAGE_CHOOSE -> {
+                binding.imageViewPlant.setImageURI(data?.data)
+                if (data != null) {
+                    imageUri = data.data
+                }
+            }
+            else ->  super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+
+
+//    private fun chooseImageGallery() {
+//
+//    }
+//
+//    override fun onRequestPermissionsResult(
+//        requestCode: Int,
+//        permissions: Array<out String>,
+//        grantResults: IntArray
+//    ) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+//        when(requestCode){
+//            PERMISSION_CODE -> {
+//                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+//                    chooseImageGallery()
+//                }else{
+//                    Toast.makeText(this,"Permission denied", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        }
+//    }
 }

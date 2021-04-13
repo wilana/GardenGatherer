@@ -36,10 +36,6 @@ class IndividualPlantActivity : AppCompatActivity() {
         binding.textViewPlantPruning.movementMethod = ScrollingMovementMethod()
         binding.textViewPlantNotes.movementMethod = ScrollingMovementMethod()
 
-        // Back button as a FAB
-//        binding.extendedFabBackToGarden.setOnClickListener {
-//            finish()
-//        }
 
         // get list of plants in the garden from db
         val db = FirebaseFirestore.getInstance().collection("plants")
@@ -54,7 +50,7 @@ class IndividualPlantActivity : AppCompatActivity() {
                 //this will create an instance of the restaurant object
                 val plant = document.toObject(Plant::class.java)
 
-                plant?.let {
+                plant.let {
                     binding.topToolbar.title = plant.plantName
                     binding.textViewPlantType.text = plant.plantType
                     binding.textViewPlantLight.text = plant.plantLight
@@ -67,6 +63,7 @@ class IndividualPlantActivity : AppCompatActivity() {
                         binding.textViewPlantPruning.text = plant.plantPruning
                     if (!plant.plantNotes.isNullOrBlank())
                         binding.textViewPlantNotes.text = plant.plantNotes
+
 
                 }
 

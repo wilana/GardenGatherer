@@ -1,5 +1,7 @@
 package com.WSM1120464.gardengatherer
 
+import android.net.Uri
+
 class Plant (
     var plantID: String?=null,
     var plantName: String?=null,
@@ -12,5 +14,6 @@ class Plant (
     var plantFertilizer: String?=null,
     var plantPruning: String?=null,
     var plantNotes: String?=null,
+    var plantImageUri: Uri?=null,
     var gardenID: String?=null
 )

@@ -28,9 +28,7 @@ class GardenSaveActivity : AppCompatActivity() {
         // set up toolbar
         setSupportActionBar(binding.topToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        // user info for querying db
-        var userID = intent.getStringExtra("userID")
+        supportActionBar?.setDisplayUseLogoEnabled(false)
 
         // try to add garden to list, then return to all gardens
         binding.extendedFabSaveGarden.setOnClickListener {
@@ -40,7 +38,7 @@ class GardenSaveActivity : AppCompatActivity() {
                 // save inputted info
                 val garden = Garden()
                 garden.gardenName = binding.editTextTextGardenName.text.toString()
-                garden.userID = userID
+                garden.userID = authDb.currentUser.uid
                 garden.gardenSize = binding.editTextGardenSize.text.toString()
                 garden.lightConditions = binding.spinnerGardenLight.selectedItem.toString()
                 garden.gardenNotes = binding.editTextGardenNotes.text.toString()
@@ -56,7 +54,6 @@ class GardenSaveActivity : AppCompatActivity() {
                         Toast.makeText(this, "Garden Added", Toast.LENGTH_LONG).show()
                         // change back to main activity by reloading gardens
                         val intent = Intent(this, MainActivity::class.java)
-                        intent.putExtra("userID", userID)
                         startActivity(intent)
                     }
                     .addOnFailureListener {
@@ -65,7 +62,7 @@ class GardenSaveActivity : AppCompatActivity() {
 
             }
             else
-                Toast.makeText(this, "Please add your name and the garden name", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Please fill in the garden's name", Toast.LENGTH_LONG).show()
         }
     }
 

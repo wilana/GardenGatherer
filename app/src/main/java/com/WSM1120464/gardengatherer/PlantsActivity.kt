@@ -31,12 +31,14 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
         setSupportActionBar(binding.topToolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // update textview heading as name of garden selected
-        binding.topToolbar.title = intent.getStringExtra("gardenName")
-        binding.textViewGardenNotes.text = intent.getStringExtra("gardenNotes")
-
         // get garden to look for
         val gardenID = intent.getStringExtra("gardenID")
+        val gardenName = intent.getStringExtra("gardenName")
+        // update textview heading as name of garden selected
+        binding.topToolbar.title = gardenName
+        binding.textViewGardenNotes.text = intent.getStringExtra("gardenNotes")
+
+
 
         // fill plants from recycler
         gardenID?.let{
@@ -45,7 +47,7 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
             // connect view model with activity
             viewModel = ViewModelProvider(this, viewModelFactory).get(PlantViewModel::class.java)
             viewModel.getPlants().observe(this, Observer<List<Plant>> { plants ->
-                var recyclerAdapter = PlantViewAdapter(this, plants, this)
+                val recyclerAdapter = PlantViewAdapter(this, plants, this)
                 binding.recyclerViewPlants.adapter = recyclerAdapter
             })
         }
@@ -61,6 +63,7 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
         binding.fabAddPlant.setOnClickListener {
             val intent = Intent(this, PlantSaveActivity::class.java)
             intent.putExtra("gardenID", gardenID)
+            intent.putExtra("gardenName", gardenName)
             startActivity(intent)
         }
     }
@@ -79,7 +82,8 @@ class PlantsActivity : AppCompatActivity(), PlantViewAdapter.PlantItemListener {
 
     // back button in toolbar
     override fun onSupportNavigateUp(): Boolean {
-        finish()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
         return true
     }
 

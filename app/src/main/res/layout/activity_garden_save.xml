@@ -72,7 +72,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mainToolBar"
-            app:srcCompat="@drawable/little_seedling" />
+            app:srcCompat="@drawable/new_seedling"
+            android:contentDescription="@string/small_seedling"
+            />
 
         <TableLayout
             android:id="@+id/tableLayout2"

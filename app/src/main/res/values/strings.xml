@@ -39,6 +39,8 @@
     <string name="sort_items">Sort items</string>
     <string name="more">More</string>
     <string name="log_out">Log Out</string>
+    <string name="add_a_photo">Add a Photo</string>
+    <string name="small_seedling">Small seedling</string>
     <string-array name="months">
         <item>January</item>
         <item>February</item>

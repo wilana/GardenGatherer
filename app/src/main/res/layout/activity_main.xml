@@ -25,8 +25,9 @@
             app:title="@string/browse_gardens"
             android:theme="@style/ToolbarStyle"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
-
-             />
+            app:logo="@drawable/small_white_logo"
+            app:logoDescription="Small seedling in a pot"
+            />
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

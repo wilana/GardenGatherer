@@ -31,17 +31,13 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
         // set up toolbar with no back option
         setSupportActionBar(binding.topToolbar)
 
-
-        // get user to query for gardens
-        val userID = intent.getStringExtra("userID")
-
         // fill gardens from user's gardens
-        userID?.let{
-            viewModelFactory = GardenViewModelFactory(userID)
+            authDb.currentUser.uid.let{
+            viewModelFactory = GardenViewModelFactory(authDb.currentUser.uid)
             // connect view model with activity
             viewModel = ViewModelProvider(this, viewModelFactory).get(GardenViewModel::class.java)
             viewModel.getGardens().observe(this, Observer<List<Garden>>{ gardens ->
-                var recyclerAdapter = GardenViewAdapter(this, gardens, this)
+                val recyclerAdapter = GardenViewAdapter(this, gardens, this)
                 binding.recyclerViewGardens.adapter = recyclerAdapter
 
             })
@@ -50,7 +46,6 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
         // FAB changes activity to add a new garden
         binding.addGardenFAB.setOnClickListener {
             val intent = Intent(this, GardenSaveActivity::class.java)
-            intent.putExtra("userID", userID)
             startActivity(intent)
         }
 
@@ -63,7 +58,6 @@ class MainActivity : AppCompatActivity(), GardenViewAdapter.GardenItemListener {
      */
     override fun gardenSelected(garden: Garden) {
         val intent = Intent(this, PlantsActivity::class.java)
-        intent.putExtra("userID", garden.userID)
         intent.putExtra("gardenID", garden.gardenID)
         intent.putExtra("gardenName", garden.gardenName)
         intent.putExtra("gardenNotes", garden.gardenNotes)
