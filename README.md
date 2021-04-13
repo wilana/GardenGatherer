@@ -20,4 +20,3 @@ Current activities:
 <p></p>
 Future Updates:
 <li>Adding sort or filter options in menu/toolbar</li>
-<li>Removing back buttons to instead access from the menu/toolbars</li>
