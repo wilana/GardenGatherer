@@ -1,5 +1,7 @@
 <h1>Garden Gatherer</h1>
 This android application helps gardener's gather their notes for easy access out in the yard.
+<a href="https://play.google.com/store/apps/details?id=com.WSM1120464.gardengatherer">Google Play:</a>
+<p>https://play.google.com/store/apps/details?id=com.WSM1120464.gardengatherer</p>
 <p><p/>
 Most recent updates:
 <li>Updated launcher icon</li>
